@@ -1,0 +1,25 @@
+# encoding: utf-8
+
+require 'bundler'
+begin
+  Bundler.setup(:default, :development)
+rescue Bundler::BundlerError => e
+  $stderr.puts e.message
+  $stderr.puts "Run `bundle install` to install missing gems"
+  exit e.status_code
+end
+require 'rake'
+
+require 'jeweler'
+Jeweler::Tasks.new do |gem|
+  # gem is a Gem::Specification... see http://docs.rubygems.org/read/chapter/20 for more options
+  gem.name = "<%= data[:name] %>"
+  gem.license = "ALL RIGHTS RESERVED"
+  gem.summary = %Q{<%= data[:summary] %>}
+  gem.description = %Q{<%= data[:description] %>}
+  gem.email = "email@example.com"
+  gem.authors = ["A User"]
+  gem.files += FileList["files/**/*"] + FileList["lib/**/*.rb"]
+  # dependencies defined in Gemfile
+end
+Jeweler::RubygemsDotOrgTasks.new

@@ -1,0 +1,22 @@
+require 'gemjacker'
+
+module GemJacker
+  class <%= data[:name].upcase %>
+    # Priority 1 so it's loaded over normal system paths.
+    def self.register(priority=1)
+      # here = File.dirname(__FILE__)
+      # there = "<%= data[:rel_bin_dir] %>"
+
+      # search_path = File.expand_path(File.join(here, there))
+
+      GemJacker::ExecutablePaths.add_path(location, priority)
+    end
+
+    def self.location
+      File.expand_path(
+        File.join(
+          File.dirname(__FILE__),
+          "<%= data[:rel_bin_dir] %>"))
+    end
+  end
+end
