@@ -1,0 +1,24 @@
+# -*- encoding: utf-8 -*-
+
+Gem::Specification.new do |gem|
+  gem.email = "email@example.com"
+  gem.authors = ["A User"]
+  gem.summary = %Q{<%= data[:summary] %>}
+  gem.description = %Q{<%= data[:description] %>}
+  gem.homepage      = ""
+
+  files  = Dir['files/**/*'].reject {|f| File.directory? f}
+  files += Dir['lib/**/*'].reject   {|f| File.directory? f}
+  test_files = []
+
+  gem.executables   = []
+  gem.files         = files
+  gem.test_files    = test_files
+  gem.name = "<%= data[:name] %>"
+  gem.license = "ALL RIGHTS RESERVED"
+  gem.version = "0.0.0"
+
+  gem.add_dependency 'gemjacker', '>= 0'
+  gem.add_dependency 'bundler'
+end
+

@@ -28,7 +28,6 @@ FileUtils.mkdir_p package_files
 FileUtils.mkdir_p package_lib
 
 FileUtils.cp File.join(skeleton, "Gemfile"), path_to_package
-FileUtils.cp File.join(skeleton, "VERSION"), path_to_package
 
 data = {
     :name        => the_name,
@@ -38,8 +37,8 @@ data = {
   }
 
 generate_file(
-  File.join(skeleton, "Rakefile.erb"),
-  File.join(path_to_package, "Rakefile"),
+  File.join(skeleton, "gemspec.gemspec.erb"),
+  File.join(path_to_package, "#{the_name.downcase}.gemspec"),
   data)
 
 generate_file(

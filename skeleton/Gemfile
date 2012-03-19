@@ -1,8 +1,5 @@
+source "http://eeweb.gentex.com/svn/embedded_sw/Tools/Ruby_Gem_Repository/"
 source "http://rubygems.org"
 
-group :development do
-  gem "bundler", "~> 1.0.0"
-  gem "jeweler", "~> 1.6.4"
-end
-
-gem "gemjacker", ">= 0.0.0"
+# Specify your gem's dependencies in the gemspec
+gemspec
