@@ -1,4 +1,3 @@
-source "http://eeweb.gentex.com/svn/embedded_sw/Tools/Ruby_Gem_Repository/"
 source "http://rubygems.org"
 
 # Specify your gem's dependencies in the gemspec
